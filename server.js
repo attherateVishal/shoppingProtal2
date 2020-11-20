@@ -7,7 +7,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 mongoose.pluralize(null);
 
-// var multer = require("multer");
+var multer = require("multer");
 
 const jwt = require('jsonwebtoken');
 const product = require('./product/routes');
@@ -22,6 +22,8 @@ console.log("__dirname ===");
 console.log(__dirname);
 console.log("__dirname ===");
 // app.use(multer({ dest: __dirname+'/uploads/'}).any());
+app.use(multer({ dest: '/app/tmp/uploads'}).any());
+// app.use(multer().any());
 
 // mongoose.connect('mongodb://127.0.0.1:27017/practise',{useNewUrlParser:true});
 mongoose.connect('mongodb+srv://rockon:asdqwe@cluster0.v1ykr.mongodb.net/shoppingPortal?retryWrites=true&w=majority',{useNewUrlParser:true});
