@@ -18,6 +18,7 @@ const cart = require('./cart/routes');
 
 app.use(cors());
 app.use(bodyParser.json());
+console.log(__dirname);
 app.use(multer({ dest: __dirname+'./uploads/'}).any());
 
 // mongoose.connect('mongodb://127.0.0.1:27017/practise',{useNewUrlParser:true});
